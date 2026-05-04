@@ -33,7 +33,7 @@ df = pd.DataFrame({
     "attendance":  attendance.round(1),
     "score":       score.round(1),
 })
-df["pass_fail"] = df["score"].apply(lambda s: "Pass" if s >= 50 else "Fail")
+df["pass_fail"] = df["score"].apply(lambda s: "Pass" if s >= 70 else "Fail")
 
 # Train model
 X = df[["study_hours", "attendance"]].values
@@ -68,6 +68,7 @@ def get_data(min_hours: float = 1, max_hours: float = 10):
 
 @app.get("/summary")
 def get_summary():
+    print(df["pass_fail"].value_counts())
     return {
         "total_students": len(df),
         "avg_score":      round(df["score"].mean(), 1),
@@ -82,7 +83,7 @@ def predict(req: PredictRequest):
     X_input = np.array([[req.study_hours, req.attendance]])
     raw = float(model.predict(X_input)[0])
     predicted = round(max(0, min(100, raw)), 1)
-    result = "Pass" if predicted >= 50 else "Fail"
+    result = "Pass" if predicted >= 70 else "Fail"
 
     if predicted >= 80:
         confidence = "High"

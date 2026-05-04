@@ -97,7 +97,7 @@ with tab1:
         )
         fig.add_hline(
             y=50, line_dash="dash", line_color="rgba(255,255,255,0.3)", line_width=1,
-            annotation_text="Pass Line (50)", annotation_position="top right",
+            annotation_text="Pass Line (70)", annotation_position="top right",
             annotation_font=dict(color="rgba(255,255,255,0.5)", size=11),
         )
         fig.update_traces(marker=dict(size=7, line=dict(width=0)))
@@ -118,7 +118,7 @@ with tab1:
         )
         fig2.add_hline(
             y=50, line_dash="dash", line_color="rgba(255,255,255,0.3)", line_width=1,
-            annotation_text="Pass Line (50)", annotation_position="top right",
+            annotation_text="Pass Line (70)", annotation_position="top right",
             annotation_font=dict(color="rgba(255,255,255,0.5)", size=11),
         )
         fig2.update_traces(marker=dict(size=7, line=dict(width=0)))
@@ -238,8 +238,8 @@ with tab2:
                         textfont=dict(size=18, color="#f1f5f9"),
                     ))
                     fig_g.add_hline(
-                        y=50, line_dash="dash", line_color="rgba(255,255,255,0.4)", line_width=1.5,
-                        annotation_text="Pass threshold (50)",
+                        y=70, line_dash="dash", line_color="rgba(255,255,255,0.4)", line_width=1.5,
+                        annotation_text="Pass threshold (70)",
                         annotation_font=dict(color="rgba(255,255,255,0.5)", size=11),
                     )
                     fig_g.update_layout(
